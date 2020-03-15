@@ -1,0 +1,19 @@
+apiversion: apps/v1
+type: Deployment
+metadata:
+  name: server-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: server
+  template:
+    metadata:
+      labels:
+        component: server
+    spec:
+      containers:
+        - name: server
+          image: thepixelboy/multi-server
+          ports:
+            - containerPort: 5000
