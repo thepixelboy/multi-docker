@@ -24,16 +24,18 @@ after_success:
   - docker push thepixelboy/multi-nginx
   - docker push thepixelboy/multi-server
   - docker push thepixelboy/multi-worker
-
-deploy:
-  edge: true
-  provider: elasticbeanstalk
-  region: 'us-east-2'
-  app: multi-docker
-  env: MultiDocker-env
-  bucket_name: elasticbeanstalk-us-east-2-323171934152
-  bucket_path: docker-multi
-  on:
-    branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
+# Comenting the AWS deployment section after deleting the
+# AWS services in order to follow the kubernetes part
+#
+# deploy:
+#   edge: true
+#   provider: elasticbeanstalk
+#   region: 'us-east-2'
+#   app: multi-docker
+#   env: MultiDocker-env
+#   bucket_name: elasticbeanstalk-us-east-2-323171934152
+#   bucket_path: docker-multi
+#   on:
+#     branch: master
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key: $AWS_SECRET_KEY
